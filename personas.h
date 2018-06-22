@@ -37,8 +37,7 @@ class personas{
         void setFertil(string);
         void setGenero(string);
 
-        friend ostream& operator<<(ostream&, const personas());
-        const personas& operator +(const personas&);
+        const personas operator +(const personas&);
         const personas operator *(const personas&); 
 
         ~personas();
