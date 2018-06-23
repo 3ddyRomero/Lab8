@@ -86,9 +86,9 @@ int main(){
                 cin>>protect;
 
                 if (protect == 's'){
-                    sc =*sa * *sb
+                //    sc =*sa * *sb;
                 }else if(protect == 'n'){
-                    sc = *sa + *sb;
+                 //   sc = *sa + *sb;
 
                 }
                 //3 ifs para sin proteccion

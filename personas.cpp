@@ -1,5 +1,6 @@
 #include "personas.h"
-
+#include<stdlib.h>
+#include<time.h>
 using namespace std;
 
 personas::personas(string pNombre, string pCabello, string pOjos, string pPiel, bool pFertil, string pGenero){
