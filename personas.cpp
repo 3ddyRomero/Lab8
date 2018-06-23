@@ -1,6 +1,7 @@
 #include "personas.h"
 #include<stdlib.h>
 #include<time.h>
+#include <iostram>
 using namespace std;
 
 personas::personas(string pNombre, string pCabello, string pOjos, string pPiel, bool pFertil, string pGenero){
@@ -55,7 +56,7 @@ void personas::setGenero(string pGenero){
 }
 
 personas personas::operator +(personas& s){
-    int ran,mujer;
+    int ran,mujer,otro;
     srand(time(NULL));
     ran = 1+rand()%(101-1);
     
@@ -63,7 +64,12 @@ personas personas::operator +(personas& s){
         srand(time(NULL));
         mujer = 6+rand()%(28-6);
         if(mujer >= 6 || mujer <= 28){
-
+            srand(time(NULL));
+            otro = 1+rand()%(101-1);
+            if(otro <=50){
+                cout<<"El bebé es varón";
+            }else if (otro >= 50)
+                cout<<"El bebé es niña"<<endl;
         }
     }
     
