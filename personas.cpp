@@ -63,7 +63,7 @@ personas personas::operator +(personas& s){
     if (ran == 1){
         srand(time(NULL));
         mujer = 6+rand()%(28-6);
-        if(mujer >= 6 || mujer <= 28){
+        if(mujer >= 1 || mujer <= 6){
             srand(time(NULL));
             otro = 1+rand()%(101-1);
             if(otro <=50){
@@ -81,7 +81,7 @@ personas personas::operator *(personas& g){
     srand(time(NULL));
     srand(time(NULL));
         mujer = 6+rand()%(28-6);
-        if(mujer >= 6 || mujer <= 28){
+        if(mujer >= 1 || mujer <= 6){
             srand(time(NULL));
             otro = 1+rand()%(101-1);
             if(otro <=50){
