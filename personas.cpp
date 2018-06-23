@@ -79,12 +79,15 @@ personas personas::operator +(personas& s){
 personas personas::operator *(personas& g){
     int ran,mujer;
     srand(time(NULL));
-    ran = 1+rand()%(101-1);
-
-        srand(time(NULL));
+    srand(time(NULL));
         mujer = 6+rand()%(28-6);
         if(mujer >= 6 || mujer <= 28){
-            
+            srand(time(NULL));
+            otro = 1+rand()%(101-1);
+            if(otro <=50){
+                cout<<"El bebé es varón";
+            }else if (otro >= 50)
+                cout<<"El bebé es niña"<<endl;
         }
         return g;
     }
