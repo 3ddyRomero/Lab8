@@ -11,13 +11,15 @@ int menu();
 int main(){
     int opcion = 0;
     char op = 'y';
+    int pos;
     vector <personas*> people;
        do{
         //Inicio del switch con menu
         switch (menu()){
         
         case 1:{
-        string Nombre,Cabello,Ojos,Piel,Fertil,Genero;
+        string Nombre,Cabello,Ojos,Piel,Genero;
+        bool Fertil;
                 cout<<"Nombre: "<<endl;
                 cin>>Nombre;
                 cout<<"Color De Cabello: "<<endl;
@@ -36,7 +38,7 @@ int main(){
             break;
         }
         case 2:{
-            int pos;
+            
             for(int i=0;i<people.size();i++){
                     cout<<people[i]->getNombre()<<" "<<people[i]->getCabello()<<" "
                     <<people[i]->getOjos()<<" "<<people[i]->getPiel()<<" "<<people[i]->getFertil()<<" "
@@ -62,15 +64,42 @@ int main(){
                 }
             break;
         }
-        //opcion para Salir
         case 5:{
+            int sujetoa,sujetob;            
+            for(int i=0;i<people.size();i++){
+                cout<<people[i]->getNombre()<<endl;
+            }
+            cout<<"Ingrese el nombre de la primera persona: "<<endl;
+            cin>>sujetoa;
+            cout<<"Ingrese el nombre de la segunda persona: "<<endl;
+            cin>>sujetob;
+
+            if (people[sujetoa]-> getGenero() == people[sujetob]->getGenero()){
+                cout<<"Son del mismo genero...."<<endl;
+                
+            }else{
+                personas* sa,sb,sc;
+                
+                sc= *sa + *sb;
+                //3 ifs para sin proteccion
+                //2ifs no va el de si se salio algo
+                //en el cpp
+                
+
+
+            }
+            break;
+        }
+        //opcion para Salir
+        case 6:{
             op = 'n';
-            cout << "\\.:.***Buen Día***.:./" << endl;
+            cout << "\\.:.***Tenga Un Buen Día***.:./" << endl;
             break;
         }
         default:{
             //Opcion no valida
             cout << "Opcion No Disponible." << endl;
+            cout<< "Intente de nuevo."<<endl;
             break;
         }
 
@@ -85,12 +114,15 @@ int main(){
 
 int menu(){
     int opcion;
+    cout<<"Buen dia."<<endl;
+    cout<<"Seleccione una opcion en el menu en base a los números."<<endl;
     cout<<"     MENU"<<endl
             <<"1. Agregar."<<endl
             <<"2. Eliminar."<<endl
             <<"3. simulacion."<<endl
             <<"4. mostrar."<<endl
-            <<"5. Salir "<<endl
+            <<"5. Probabilidades"<<endl
+            <<"6. Salir "<<endl
             <<"Ingrese una opcion: ";
             cin >> opcion;
     

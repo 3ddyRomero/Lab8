@@ -14,19 +14,19 @@ class personas{
         string cabello;
         string ojos;
         string piel;
-        string fertil;
+        bool fertil;
         string genero; 
 
     public:
 
         personas();
-        personas(string, string, string, string, string, string);
+        personas(string, string, string, string, bool, string);
         //metodos get
         string getNombre();
         string getCabello();
         string getOjos();
         string getPiel();
-        string getFertil();
+        bool getFertil();
         string getGenero();
         
         //metodos set 
@@ -34,11 +34,11 @@ class personas{
         void setCabello(string);
         void setOjos(string);
         void setPiel(string);
-        void setFertil(string);
+        void setFertil(bool);
         void setGenero(string);
 
-        const personas operator +(const personas&);
-        const personas operator *(const personas&); 
+         personas operator +( personas&);
+         personas operator *( personas&); 
 
         ~personas();
 

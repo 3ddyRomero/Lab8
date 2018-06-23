@@ -2,7 +2,7 @@
 
 using namespace std;
 
-personas::personas(string pNombre, string pCabello, string pOjos, string pPiel, string pFertil, string pGenero){
+personas::personas(string pNombre, string pCabello, string pOjos, string pPiel, bool pFertil, string pGenero){
     nombre=pNombre;
     cabello=pCabello;
     ojos=pOjos;
@@ -39,10 +39,10 @@ void personas::setPiel(string pPiel){
     piel=pPiel;
 }
 
-string personas::getFertil(){
+bool personas::getFertil(){
     return fertil;
 }
-void personas::setFertil(string pFertil){
+void personas::setFertil(bool pFertil){
     fertil=pFertil;
 }
 
@@ -53,12 +53,23 @@ void personas::setGenero(string pGenero){
     genero=pGenero;
 }
 
-const personas personas::operator +(const personas& s){
+personas personas::operator +(personas& s){
+    int ran,mujer;
+    srand(time(NULL));
+    ran = 1+rand()%(101-1);
     
+    if (ran == 1){
+        srand(time(NULL));
+        mujer = 6+rand()%(28-6);
+        if(mujer >= 6 || mujer <= 28){
+            
+        }
+    }
     
+    return s;
 }
 
-const personas personas::operator *(const personas& g){
+personas personas::operator *( personas& g){
     
     
 }
