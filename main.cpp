@@ -1,8 +1,10 @@
 #include <iostream>
 #include <vector>
 #include "personas.h"
+#include <string>
 
 using namespace std;
+
 
 int menu();
 
@@ -12,10 +14,9 @@ int main(){
     vector <personas*> people;
        do{
         //Inicio del switch con menu
-        switch (menu())
-        {
+        switch (menu()){
         
-        case 1:
+        case 1:{
         string Nombre,Cabello,Ojos,Piel,Fertil,Genero;
                 cout<<"Nombre: "<<endl;
                 cin>>Nombre;
@@ -33,41 +34,57 @@ int main(){
                 people.push_back(a);
             
             break;
-        
-        case 2:
+        }
+        case 2:{
+            int pos;
+            for(int i=0;i<people.size();i++){
+                    cout<<people[i]->getNombre()<<" "<<people[i]->getCabello()<<" "
+                    <<people[i]->getOjos()<<" "<<people[i]->getPiel()<<" "<<people[i]->getFertil()<<" "
+                    <<people[i]->getGenero()<<" "<<endl;
+                }
+            cout<<"Ingrese posicion a eliminar: "<<endl;
+            cin>>pos;
+            people.erase(people.begin()+pos);        
+            break;
+        }
+        case 3:{
+
+
 
             break;
+        }
         
-        case 3:
-
-
-            break;
-        
-        case 4:
+        case 4:{
             for(int i=0;i<people.size();i++){
                     cout<<people[i]->getNombre()<<" "<<people[i]->getCabello()<<" "
                     <<people[i]->getOjos()<<" "<<people[i]->getPiel()<<" "<<people[i]->getFertil()<<" "
                     <<people[i]->getGenero()<<" "<<endl;
                 }
             break;
+        }
         //opcion para Salir
-        case 5:
+        case 5:{
             op = 'n';
             cout << "\\.:.***Buen Día***.:./" << endl;
             break;
-        default:
+        }
+        default:{
             //Opcion no valida
             cout << "Opcion No Disponible." << endl;
             break;
+        }
 
         } //Switch End
         cout << endl;
 
     } while (op == 'y');
     cout << endl;
+
+    return 0;
 }
 
 int menu(){
+    int opcion;
     cout<<"     MENU"<<endl
             <<"1. Agregar."<<endl
             <<"2. Eliminar."<<endl

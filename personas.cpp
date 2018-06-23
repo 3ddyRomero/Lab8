@@ -53,9 +53,12 @@ void personas::setGenero(string pGenero){
     genero=pGenero;
 }
 
-const personas personas::operator +(const personas& r){
+const personas personas::operator +(const personas& s){
     
-    if (+ == 1)
+    
+}
 
-
+const personas personas::operator *(const personas& g){
+    
+    
 }
