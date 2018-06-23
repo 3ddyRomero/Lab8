@@ -65,7 +65,9 @@ int main(){
             break;
         }
         case 5:{
-            int sujetoa,sujetob;            
+            int sujetoa,sujetob;   
+
+            char protect;        
             for(int i=0;i<people.size();i++){
                 cout<<people[i]->getNombre()<<endl;
             }
@@ -80,7 +82,15 @@ int main(){
             }else{
                 personas* sa,sb,sc;
                 
-                sc= *sa + *sb;
+                cout<<"¿Utilizó o utilizará protección?(s/n)"<<endl;
+                cin>>protect;
+
+                if (protect == 's'){
+                    sc =*sa * *sb
+                }else if(protect == 'n'){
+                    sc = *sa + *sb;
+
+                }
                 //3 ifs para sin proteccion
                 //2ifs no va el de si se salio algo
                 //en el cpp
